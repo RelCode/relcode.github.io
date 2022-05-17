@@ -21,23 +21,23 @@ const Skills = () => {
                             <ul className="skills-list m-0 p-0">
                                 <li className="progress">
                                     <i>Self-Driven</i>
-                                    <span className="progress-bar" role="progressbar" style={{ width: " 100%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">100%</span>
+                                    <span className="progress-bar" aria-label="Self-Driven" role="progressbar" style={{ width: " 100%" }} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">100%</span>
                                 </li>
                                 <li className="progress">
                                     <i>Problem Solving</i>
-                                    <span className="progress-bar" role="progressbar" style={{ width: " 87%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">87%</span>
+                                    <span className="progress-bar" aria-label="Problem Solving" role="progressbar" style={{ width: " 87%" }} aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">87%</span>
                                 </li>
                                 <li className="progress">
                                     <i>Listening</i>
-                                    <span className="progress-bar" role="progressbar" style={{ width: " 85%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">85%</span>
+                                    <span className="progress-bar" aria-label="Listening" role="progressbar" style={{ width: " 85%" }} aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</span>
                                 </li>
                                 <li className="progress">
                                     <i>Communication</i>
-                                    <span className="progress-bar" role="progressbar" style={{ width: " 80%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">80%</span>
+                                    <span className="progress-bar" aria-label="Communication" role="progressbar" style={{ width: " 80%" }} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</span>
                                 </li>
                                 <li className="progress">
                                     <i>Time Management</i>
-                                    <span className="progress-bar" role="progressbar" style={{ width: " 80%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">80%</span>
+                                    <span className="progress-bar" aria-label="Time Management" role="progressbar" style={{ width: " 80%" }} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</span>
                                 </li>
                             </ul>
                         </div>
@@ -48,51 +48,51 @@ const Skills = () => {
                                 <li className="hard-skills-list">
                                     <li className="progress">
                                         <i>HTML</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 87%" }} aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">87%</span>
+                                        <span className="progress-bar" aria-label="HTML" role="progressbar" style={{ width: " 87%" }} aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">87%</span>
                                     </li>
                                     <li className="progress">
                                         <i>CSS</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 84%" }} aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">84%</span>
+                                        <span className="progress-bar" aria-label="CSS" role="progressbar" style={{ width: " 84%" }} aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">84%</span>
                                     </li>
                                 </li>
                                 <li className="hard-skills-list">
                                     <li className="progress">
                                         <i>JavaScript</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 85%" }} aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</span>
+                                        <span className="progress-bar" aria-label="JavaScript" role="progressbar" style={{ width: " 85%" }} aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</span>
                                     </li>
                                     <li className="progress">
                                         <i>PHP</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 82%" }} aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">82%</span>
+                                        <span className="progress-bar" aria-label="PHP" role="progressbar" style={{ width: " 82%" }} aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">82%</span>
                                     </li>
                                 </li>
                                 <li className="hard-skills-list">
                                     <li className="progress">
                                         <i>React</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 79%" }} aria-valuenow="79" aria-valuemin="0" aria-valuemax="100">79%</span>
+                                        <span className="progress-bar" aria-label="React" role="progressbar" style={{ width: " 79%" }} aria-valuenow="79" aria-valuemin="0" aria-valuemax="100">79%</span>
                                     </li>
                                     <li className="progress">
                                         <i>Angular</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 68%" }} aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">68%</span>
+                                        <span className="progress-bar" aria-label="Angular" role="progressbar" style={{ width: " 68%" }} aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">68%</span>
                                     </li>
                                 </li>
                                 <li className="hard-skills-list">
                                     <li className="progress">
                                         <i>C#</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 70%" }} aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</span>
+                                        <span className="progress-bar" aria-label="C Sharp" role="progressbar" style={{ width: " 70%" }} aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</span>
                                     </li>
                                     <li className="progress">
                                         <i>Python</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 55%" }} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</span>
+                                        <span className="progress-bar" aria-label="Python" role="progressbar" style={{ width: " 55%" }} aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</span>
                                     </li>
                                 </li>
                                 <li className="hard-skills-list">
                                     <li className="progress">
                                         <i>MS SQL</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 80%" }} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</span>
+                                        <span className="progress-bar" aria-label="MS SQL" role="progressbar" style={{ width: " 80%" }} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</span>
                                     </li>
                                     <li className="progress">
                                         <i>MySQL</i>
-                                        <span className="progress-bar" role="progressbar" style={{ width: " 87%" }} aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">87%</span>
+                                        <span className="progress-bar" aria-label="MySQL" role="progressbar" style={{ width: " 87%" }} aria-valuenow="87" aria-valuemin="0" aria-valuemax="100">87%</span>
                                     </li>
                                 </li>
                             </ul>
