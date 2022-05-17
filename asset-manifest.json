@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.878c8906.css",
-    "main.js": "/static/js/main.7f814bd6.js",
-    "static/media/fana.jpg": "/static/media/fana.3745ec445cddaa56e717.jpg",
-    "static/media/stats.png": "/static/media/stats.ba3d77601835991e8bf5.png",
-    "static/media/login.png": "/static/media/login.aa9701062c9149cd9db5.png",
-    "static/media/main.png": "/static/media/main.06ac7e5d8df1b6729f44.png",
-    "static/media/hero.jpeg": "/static/media/hero.d7d9a712f16d8e31470c.jpeg",
-    "static/media/services.png": "/static/media/services.aacbce597e847f80ac75.png",
-    "static/media/printout.png": "/static/media/printout.ca3fe2e270c136165e95.png",
-    "static/media/contact.png": "/static/media/contact.beb12195ac4d3aa7ac69.png",
-    "static/media/coding_1.jpg": "/static/media/coding_1.df0e84291b5658bd44ff.jpg",
-    "static/media/print.png": "/static/media/print.63f56146fe80a5ee2607.png",
-    "static/media/error.png": "/static/media/error.203865a4e63703579cdd.png",
-    "static/media/order.png": "/static/media/order.e697674b2a3203ce881e.png",
-    "static/media/cart.png": "/static/media/cart.a748191d9c99331fcc54.png",
-    "static/media/sign.png": "/static/media/sign.880f2fae5bc96bc96d5e.png",
-    "static/media/checkout.png": "/static/media/checkout.ca90cb16421620c39924.png",
-    "static/media/info.png": "/static/media/info.46fd452d78a7acda61bf.png",
-    "index.html": "/index.html",
-    "main.878c8906.css.map": "/static/css/main.878c8906.css.map",
-    "main.7f814bd6.js.map": "/static/js/main.7f814bd6.js.map"
+    "main.css": "/relcode.github.io/static/css/main.a0f778c7.css",
+    "main.js": "/relcode.github.io/static/js/main.92aedeb6.js",
+    "static/media/fana.jpg": "/relcode.github.io/static/media/fana.3745ec445cddaa56e717.jpg",
+    "static/media/stats.png": "/relcode.github.io/static/media/stats.ba3d77601835991e8bf5.png",
+    "static/media/login.png": "/relcode.github.io/static/media/login.aa9701062c9149cd9db5.png",
+    "static/media/main.png": "/relcode.github.io/static/media/main.06ac7e5d8df1b6729f44.png",
+    "static/media/hero.jpeg": "/relcode.github.io/static/media/hero.d7d9a712f16d8e31470c.jpeg",
+    "static/media/services.png": "/relcode.github.io/static/media/services.aacbce597e847f80ac75.png",
+    "static/media/printout.png": "/relcode.github.io/static/media/printout.ca3fe2e270c136165e95.png",
+    "static/media/contact.png": "/relcode.github.io/static/media/contact.beb12195ac4d3aa7ac69.png",
+    "static/media/coding_1.jpg": "/relcode.github.io/static/media/coding_1.df0e84291b5658bd44ff.jpg",
+    "static/media/print.png": "/relcode.github.io/static/media/print.63f56146fe80a5ee2607.png",
+    "static/media/error.png": "/relcode.github.io/static/media/error.203865a4e63703579cdd.png",
+    "static/media/order.png": "/relcode.github.io/static/media/order.e697674b2a3203ce881e.png",
+    "static/media/cart.png": "/relcode.github.io/static/media/cart.a748191d9c99331fcc54.png",
+    "static/media/sign.png": "/relcode.github.io/static/media/sign.880f2fae5bc96bc96d5e.png",
+    "static/media/checkout.png": "/relcode.github.io/static/media/checkout.ca90cb16421620c39924.png",
+    "static/media/info.png": "/relcode.github.io/static/media/info.46fd452d78a7acda61bf.png",
+    "index.html": "/relcode.github.io/index.html",
+    "main.a0f778c7.css.map": "/relcode.github.io/static/css/main.a0f778c7.css.map",
+    "main.92aedeb6.js.map": "/relcode.github.io/static/js/main.92aedeb6.js.map"
   },
   "entrypoints": [
-    "static/css/main.878c8906.css",
-    "static/js/main.7f814bd6.js"
+    "static/css/main.a0f778c7.css",
+    "static/js/main.92aedeb6.js"
   ]
 }
