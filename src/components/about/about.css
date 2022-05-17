@@ -1,0 +1,80 @@
+#about {
+    padding: 15px;
+    margin-top: 20px;
+}
+
+
+
+#about .row .cols {
+    padding: 25px;
+    /* aspect-ratio: 1/1; */
+    /* box-shadow: 0px 0px 6px 3px; */
+}
+
+#about .row .cols .cols-col {
+    flex: 1;
+    padding: 15px;
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px;
+}
+
+.about-user {
+    height: 100%;
+}
+
+.user-image {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 5px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.about-user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-user-summary {
+    font-size: 18px;
+    font-style: italic;
+    height: 100%;
+}
+
+.about-user-summary blockquote {
+    border: none;
+    margin-bottom: -30px;
+    position: relative;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.about-user-summary blockquote:before {
+    content: "\201C";
+    font-weight: bold;
+    font-size: 70px;
+    color: rgba(0,0,0,.55);
+    position: absolute;
+    top: -0.3em;
+    left: -0.5em;
+    font-family: 'Georgia';
+}
+
+.about-user-summary blockquote:after {
+    content: "\201D";
+    font-weight: bold;
+    font-size: 70px;
+    color: rgba(0, 0, 0, .55);
+    position: absolute;
+    bottom: -0.9em;
+    right: 0;
+    font-family: 'Georgia';
+}
+
+.about-buffer {
+    width: 100%;
+    background-image: url(../../assets/images/coding_1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}

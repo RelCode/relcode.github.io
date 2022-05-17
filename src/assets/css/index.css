@@ -1,0 +1,132 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+
+#root {
+    height: 100%;
+    min-height: 100vh;
+}
+
+.header {
+    height: 100%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #45505b;
+}
+
+.section-title::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: rgba(0, 0, 0, .55);
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+.mobile-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+    background: rgba(0, 0, 0, .75);
+    padding-top: 65px;
+}
+
+.close-menu {
+    color: #FFF;
+    position: absolute;
+    top: -15px;
+    right: 26px;
+    font-size: 65px;
+}
+
+.menu-layer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.hide-menu-layer {
+    display: none !important;
+}
+
+.menu-layer ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menu-layer ul li {
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.menu-layer ul li a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.menu-layer ul li .active {
+    background: #fff;
+    color: #000;
+    padding: 5px;
+}
+
+.back-to-top {
+    position: fixed;
+    z-index: 99;
+    bottom: 32px;
+    right: 32px;
+    width: 65px;
+    height: 65px;;
+    background: rgba(0, 0, 0, .55);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+}
+
+.back-to-top a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hide-top {
+    display: none;
+}
+
+/* #root, #root div {
+    height: 100%;
+} */

@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import {Navbar, Header, About, Skills, Portfolio, Contact, Footer} from './components';
+import {useState,useEffect} from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [navHeight, setNavHeight] = useState(0)
+
+    const getNavHeight = () => {
+        setNavHeight(document.getElementsByClassName('navbar')[0].clientHeight)
+    }
+
+    useEffect(() => {
+        getNavHeight()
+        AOS.init()
+        AOS.refresh()
+    })
+
+    return (
+        <>
+            <div className='header'>
+                <Navbar/>
+                <Header navHeight={navHeight}/>
+            </div>
+            <About/>
+            <Skills/>
+            <Portfolio/>
+            <Contact/>
+            <Footer/>
+        </>
+    )
 }
 
 export default App;

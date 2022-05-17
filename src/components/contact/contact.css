@@ -1,0 +1,51 @@
+#contact {
+    margin-bottom: 35px;
+}
+
+.contact-bottom{
+    padding-top: 25px;
+    /* margin-bottom: 35px; */
+}
+
+label {
+    font-style: 18px;
+    font-weight: bold;
+    color: rgba(0,0,0,.55);
+}
+
+.app-icons {
+    border: 1px solid;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.app-icons a {
+    color: rgba(0,0,0,.55);
+}
+
+.app-icons a:nth-child(1):hover{
+    color: #075E54 !important;
+}
+
+.app-icons a:nth-child(2):hover {
+    color: #0E768A !important;
+}
+
+.app-icons a:nth-child(3):hover {
+    color: #171515 !important;
+}
+
+.app-icons svg {
+    font-size: 2.3rem !important;
+}
+
+@media screen and (max-width:767px){
+    .app-icons {
+        border: 0;
+    }
+    .icon-buffer {
+        padding: 45px;
+    }
+}

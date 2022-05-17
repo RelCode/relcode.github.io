@@ -1,0 +1,57 @@
+.filter-parent {
+    /* padding: 25px; */
+}
+
+.filter-header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    width: 100%;
+    overflow: auto;
+}
+
+@media screen and (max-width:767px){
+    .filter-header ul {
+        justify-content: space-between;
+    }
+
+    .filter-header ul li {
+        white-space: nowrap;
+    }
+}
+
+.filter-header ul li {
+    padding: 15px;
+    cursor: pointer;
+    transition: .5s ease-out;
+}
+
+.filter-header ul .active {
+    font-weight: bold;
+    padding: 5px;
+    padding-top: 15px;
+    /* text-decoration: underline; */
+    text-underline-position: under;
+    background-color: rgba(0,0,0,.55);
+    color: #FFF;
+}
+
+.filter-header ul li:hover {
+    font-weight: bold;
+    transition: .5s ease-in;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+.filter-item {
+    padding: 35px !important;
+    position: relative;
+}
+
+.filter-item img {
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 6%), 0 2px 5px 0 rgb(0 0 0 / 20%);
+    border-radius: 15px;
+    cursor: pointer;
+}

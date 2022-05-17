@@ -1,43 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#FFFFFF" />
+	<meta name="description" content="Web site created using create-react-app"/>
+	<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+	<title>RJ Nkosi</title>
+</head>
+<body>
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+	<div id="root"></div>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+	
+	<script>
+		window.onload = function(){
+			// els.addEventListener('click',function(){
+			// 	closeMenuLayer()
+			// })
+			window.onscroll = () => {
+				//this section deals with scrolling of the page
+				let nav = document.getElementsByClassName('navbar')[0]
+				let back = document.getElementsByClassName('back-to-top')[0]
+				if (nav) {
+					if (document.documentElement.scrollTop > 250) {
+						nav.classList.add('nav-scroll')
+						back.classList.remove('hide-top')
+					} else {
+						nav.classList.remove('nav-scroll')
+						back.classList.add('hide-top')
+					}
+				}
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+				//this deals with the changing of the nav link class after page section detection
+				let menuSection = document.querySelectorAll('.nav-link')
+				let mainSection = document.querySelectorAll('.container-fluid');
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+				mainSection.forEach((v, i) => {
+					let rect = v.getBoundingClientRect().y
+					if (rect < window.innerHeight - 200) {
+						menuSection.forEach(v => v.classList.remove('active'))
+						menuSection[i].classList.add('active')
+					}
+				})
+			}
+		}
+
+		function handleLinkClick(e){
+			var els = document.querySelectorAll('.menu-layer ul li a')
+
+			for (let i = 0; i < els.length; i++) {
+				els[i].classList.remove('active')
+			}
+			e.target.classList.add('active')
+			closeMenuLayer()
+		}
+
+		function closeMenuLayer(){
+			const menu_layer = document.getElementsByClassName('mobile-menu')[0]
+			menu_layer.classList.add('hide-menu-layer')
+		}
+	</script>
+
+	<div class="mobile-menu hide-menu-layer">
+		<span class="close-menu" onclick="closeMenuLayer()">&times;</span>
+		<div class="menu-layer">
+			<ul>
+				<li class="">
+					<a class="active" href="#header" onClick="handleLinkClick(event)">Home</a>
+				</li>
+				<li class="">
+					<a class="" href="#about" onClick="handleLinkClick(event)">About</a>
+				</li>
+				<li class="">
+					<a class="" href="#skills" onClick="handleLinkClick(event)">Skills</a>
+				</li>
+				<li class="">
+					<a class="" href="#portfolio" onClick="handleLinkClick(event)">Porfolio</a>
+				</li>
+				<li class="">
+					<a class="" href="#contact" onClick="handleLinkClick(event)">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="back-to-top hide-top">
+		<a href="#header">&#8593;</a>
+	</div>
+
+</body>
 </html>

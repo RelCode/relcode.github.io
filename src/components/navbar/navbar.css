@@ -1,0 +1,98 @@
+.navbar {
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    transition: .5s ease-out;
+}
+
+.navbar-brand {
+    display: flex;
+    justify-content: start;
+}
+
+.navbar ul {
+    justify-content: end;
+}
+
+.navbar-nav {
+    flex-direction: row !important;
+}
+
+.nav-item {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-link {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: rgba(0,0,0,.55);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms !important;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.nav-link:hover::after, .nav-link:focus::after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* navbar after adding scroll effectsfa */
+.nav-scroll {
+    background-color: rgba(0, 0, 0, .55);
+    transition: .5 ease-in;
+}
+
+.nav-scroll .navbar-brand {
+    color: #FFF !important;
+}
+
+.nav-scroll .navbar-nav .nav-item .nav-link {
+    color: #FFF;
+}
+
+.nav-item .active {
+    color: rgba(255, 255, 255, .55) !important;
+}
+
+.nav-scroll .navbar-nav .nav-item .nav-link::after {
+    background-color: rgba(255, 255, 255, .55) !important;
+}
+
+.mobile-menu-icon {
+    margin-right: 25px;
+    font-size: 40px !important;
+    color: #000;
+}
+
+.nav-scroll .mobile-menu-icon {
+    color: #FFF !important;
+}
+
+@media screen and (max-width:767px){
+    .navbar-nav {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}
+
+@media screen and (min-width:768px){
+    .mobile-menu-icon {
+        display: none !important;
+    }
+}

@@ -1,0 +1,74 @@
+#header {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* background-image: url(../../assets/images/me.jpg); */
+}
+
+#header > .row {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#header .row .col {
+    height: 100%;
+    background-image: url(../../assets/images/hero.jpeg);
+    background-position: center;
+    background-size: cover;
+    
+    /* background: url(../../assets/images/me.jpg) center no-repeat; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.header-effect {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,.55);
+}
+
+.header-effect span {
+    height: 50px;
+}
+
+.name-typing-effect {
+    color: #000;
+    width: 100%;
+    animation: typing 2s steps(14);
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 58px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+@media screen and (max-width:767px){
+    .name-typing-effect {
+        height: 150px;
+    }
+    .name-typing-effect span {
+        display: block;
+    }
+}
