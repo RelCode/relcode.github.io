@@ -75,9 +75,9 @@
 }
 
 .mobile-menu-icon {
-    margin-right: 25px;
+    color: rgba(0, 0, 0, .7);
     font-size: 40px !important;
-    color: #000;
+    margin-right: 10px;
 }
 
 .nav-scroll .mobile-menu-icon {
