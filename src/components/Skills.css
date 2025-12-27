@@ -1,0 +1,50 @@
+/* Skills Section Styles */
+.skills-section {
+  margin-bottom: 1.5rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skill-row {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.skill-category {
+  font-weight: 600;
+  color: #333;
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
+.skill-list {
+  color: #444;
+  flex: 1;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .skill-row {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .skill-category {
+    min-width: auto;
+  }
+}
+
+@media print {
+  .skills-grid {
+    gap: 0.4rem;
+  }
+  
+  .skill-row {
+    font-size: 0.85rem;
+  }
+}

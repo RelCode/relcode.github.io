@@ -1,0 +1,29 @@
+/* Summary Section Styles */
+.summary-section {
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 0.75rem 0;
+  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: 0.25rem;
+}
+
+.summary-text {
+  color: #444;
+  line-height: 1.7;
+  text-align: justify;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media print {
+  .summary-text {
+    font-size: 0.9rem;
+  }
+}

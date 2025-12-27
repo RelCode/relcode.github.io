@@ -1,0 +1,198 @@
+/* Resume Header Styles */
+.resume-header {
+  margin-bottom: 1.5rem;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.profile-picture {
+  flex-shrink: 0;
+}
+
+.profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-placeholder span {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.header-text {
+  flex: 1;
+  text-align: left;
+}
+
+.resume-header .name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 2px;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+}
+
+.resume-header .title {
+  font-size: 1.25rem;
+  color: #555;
+  font-weight: 400;
+  margin: 0;
+  font-style: italic;
+  min-height: 1.8rem;
+}
+
+.resume-header .typewriter {
+  color: #2c5aa0;
+  font-weight: 500;
+}
+
+.resume-header .cursor {
+  color: #2c5aa0;
+  animation: blink 1s step-end infinite;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  color: #444;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.contact-item .icon {
+  font-size: 1rem;
+}
+
+.separator {
+  color: #999;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.social-links a {
+  color: #2c5aa0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #1a3d7a;
+  text-decoration: underline;
+}
+
+.header-divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #333 20%, #333 80%, transparent);
+  margin-top: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+
+  .profile-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-placeholder span {
+    font-size: 2rem;
+  }
+
+  .resume-header .name {
+    font-size: 2rem;
+  }
+  
+  .resume-header .title {
+    font-size: 1.1rem;
+  }
+  
+  .contact-info {
+    font-size: 0.85rem;
+  }
+  
+  .separator {
+    display: none;
+  }
+}
+
+@media print {
+  .profile-placeholder {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+  }
+
+  .profile-placeholder span {
+    font-size: 2rem;
+  }
+
+  .header-content {
+    gap: 1.5rem;
+  }
+
+  .resume-header .name {
+    font-size: 2rem;
+  }
+  
+  .social-links a {
+    color: #000;
+  }
+}
