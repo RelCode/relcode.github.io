@@ -63,6 +63,21 @@
   min-height: 1.8rem;
 }
 
+.tagline {
+  margin: 0.6rem 0 0 0;
+  color: #444;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.hero-pitch {
+  margin: 0.5rem 0 0 0;
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 46rem;
+}
+
 .resume-header .typewriter {
   color: #2c5aa0;
   font-weight: 500;
@@ -93,6 +108,13 @@
   font-size: 0.9rem;
   margin-bottom: 0.75rem;
   text-align: center;
+}
+
+.availability {
+  color: #555;
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0 0 0.75rem 0;
 }
 
 .contact-item {
@@ -162,6 +184,14 @@
   
   .resume-header .title {
     font-size: 1.1rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .hero-pitch {
+    font-size: 0.85rem;
   }
   
   .contact-info {

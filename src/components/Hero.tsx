@@ -1,5 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Hero.css';
+
+const ROTATING_SKILLS = [
+  'Web Development',
+  'Database Management',
+  'System Automation',
+  'Mobile Application Development',
+];
 
 const ResumeHeader: React.FC = () => {
   const [text, setText] = useState('');
@@ -7,17 +14,10 @@ const ResumeHeader: React.FC = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const skills = [
-    'Web Development',
-    'Database Management',
-    'System Automation',
-    'Mobile Application Development',
-  ];
-
   useEffect(() => {
     const handleType = () => {
-      const i = loopNum % skills.length;
-      const fullText = skills[i];
+      const i = loopNum % ROTATING_SKILLS.length;
+      const fullText = ROTATING_SKILLS[i];
 
       setText(
         isDeleting
@@ -37,13 +37,13 @@ const ResumeHeader: React.FC = () => {
 
     const timer = setTimeout(handleType, typingSpeed);
     return () => clearTimeout(timer);
-  }, [text, isDeleting, loopNum, typingSpeed, skills]);
+  }, [text, isDeleting, loopNum, typingSpeed]);
 
   return (
     <header className="resume-header">
       <div className="header-content">
         <div className="profile-picture">
-          <img src="profilepicture.jpeg" className="profile-picture" alt="Profile" />
+          <img src="profilepicture.jpeg" alt="Profile" />
         </div>
         <div className="header-text">
           <h1 className="name"><i>Lebo</i> Nkosi</h1>
@@ -51,6 +51,11 @@ const ResumeHeader: React.FC = () => {
             I do <span className="typewriter">{text}</span>
             <span className="cursor">|</span>
           </h2>
+          <p className="tagline">Senior Software Engineer • Remote-first • AI &amp; Full-stack</p>
+          <p className="hero-pitch">
+            I build and maintain production-grade web applications and AI-adjacent tooling — with a focus on reliability,
+            performance, and clean engineering practices.
+          </p>
         </div>
       </div>
       <div className="contact-info">
@@ -65,6 +70,9 @@ const ResumeHeader: React.FC = () => {
         <div className="contact-item">
           <span>Cape Town/Johannesburg/Remote</span>
         </div>
+      </div>
+      <div className="availability">
+        Availability: Remote contract work • After-hours support (17:00–02:00 SAST) • U.S. time zones friendly
       </div>
       <div className="social-links">
         <a href="https://www.linkedin.com/in/relebohile-nkosi-792b99106/" target="_blank" rel="noopener noreferrer">
