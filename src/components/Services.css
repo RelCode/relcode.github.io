@@ -1,0 +1,68 @@
+/* Services / Offer Section Styles */
+.services-section {
+  margin-bottom: 1.5rem;
+}
+
+.services-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.services-cta {
+  color: #2c5aa0;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.services-cta:hover {
+  text-decoration: underline;
+}
+
+.services-subtitle {
+  margin: 0.5rem 0 0 0;
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.services-list {
+  margin: 0.6rem 0 0 0;
+  padding-left: 1.5rem;
+}
+
+.services-list li {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.services-list li:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .services-cta {
+    font-size: 0.85rem;
+  }
+
+  .services-subtitle,
+  .services-list li {
+    font-size: 0.85rem;
+  }
+}
+
+@media print {
+  .services-cta {
+    color: #000;
+  }
+
+  .services-list li {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+  }
+}

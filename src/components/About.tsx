@@ -6,10 +6,10 @@ const Summary: React.FC = () => {
     <section className="summary-section">
       <h3 className="section-title">Professional Summary</h3>
       <p className="summary-text">
-        Passionate and detail-oriented Software Engineer with 7 years of experience in designing, 
-        developing, and implementing software solutions. Proficient in full-stack development with 
-        expertise in modern web technologies. Strong problem-solving skills with a track record of 
-        delivering high-quality code and collaborating effectively in agile teams.
+        Software Engineer with 7+ years of experience and enterprise exposure building production web applications and AI-adjacent tooling.
+        I help teams ship reliable features, improve performance, and raise code quality through pragmatic engineering
+        practices (testing, code reviews, and maintainable architecture). Open to remote contract work and after-hours
+        engagements.
       </p>
     </section>
   );

@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders resume', () => {
   render(<App />);
-  const nameElement = screen.getByText(/YOUR NAME/i);
+  const nameElement = screen.getByText(/Lebo/i);
   expect(nameElement).toBeInTheDocument();
 });

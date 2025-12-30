@@ -17,13 +17,12 @@ const Experience: React.FC = () => {
 			location: "Remote",
 			period: "Sept 2024 - Present",
 			responsibilities: [
-				"Built and maintained frontend features for legal professionals platform using React and TypeScript",
-				"Integrated AI capabilities with Azure OpenAI, developing LLM evaluation, regression testing tools, and RAG project in Python with most of our UI components in Angular",
-				"Optimized components for maximum performance, also performed code reviews and mentored a junior developer while being mentored by a senior engineer",
-                "I'm always looking into finding ways to improve our retrieval implementation and answer generation processes to enhance user experience",
-                "I've hosted knowledge sharing sessions on LLMs and best practices for integrating AI into applications",
-                "From time to time, I collaborate with CloudOps team to setup IAAC templates whether it's to create DBs, S3 buckets, or other infrastructure needs",
-                "Currently working towards 80% test coverage both our Angular and Python codebases",
+				"Delivered production-grade React + TypeScript features for a legal professionals platform, focusing on reliability, usability, and maintainability",
+				"Integrated AI capabilities using Azure OpenAI; built LLM evaluation and regression testing tooling and contributed to RAG workflows in Python with Angular-based UI components",
+				"Improved retrieval and answer-generation quality by iterating on retrieval strategies and evaluation signals to reduce brittle responses",
+				"Led code reviews, mentored a junior engineer, and hosted knowledge-sharing sessions on practical LLM integration patterns",
+				"Partnered with CloudOps on infrastructure needs (IaC templates for databases, S3 buckets, and supporting services)",
+				"Strengthened engineering quality by driving toward higher automated test coverage across Angular and Python codebases",
 			],
 		},
 		{
@@ -32,10 +31,10 @@ const Experience: React.FC = () => {
 			location: "Technopark, Stellenbosch",
 			period: "Oct 2022 - Jun 2024",
 			responsibilities: [
-				"Developed full-stack applications using React, Node.js, and PHP in an Agile environment",
-				"Spearheaded Nedbank integration project and created holiday management microservice",
-				"Built similarity search feature using Levenstein algorithm and custom tooltips library based on Chariot-Tooltips",
-				"Achieved 90% test coverage through comprehensive unit and integration testing",
+				"Built and maintained full-stack features across React, Node.js, and PHP in an Agile delivery environment",
+				"Led a Nedbank integration project and shipped a holiday management microservice to support internal workflows",
+				"Implemented similarity search (Levenshtein-based) and delivered reusable UI utilities (custom tooltip library)",
+				"Improved confidence in releases through unit and integration testing, raising coverage and reducing regressions",
 			],
 		},
 		{
@@ -44,9 +43,9 @@ const Experience: React.FC = () => {
 			location: "Jet Park, Kempton Park",
 			period: "Dec 2019 - Sept 2022",
 			responsibilities: [
-				"Designed web applications and databases to collect, analyze, and visualize production machine data",
-				"Automated data collection processes and created dynamic reports for stakeholders",
-				"Setup and maintained servers, network infrastructure, and client websites",
+				"Built web apps and databases to capture and visualize production machine data for operational decision-making",
+				"Automated data collection and reporting pipelines to reduce manual effort and improve data consistency",
+				"Maintained servers, network infrastructure, and client websites to support production uptime",
 			],
 		},
 		{
@@ -55,8 +54,8 @@ const Experience: React.FC = () => {
 			location: "Braamfontein, Johannesburg",
 			period: "Jul 2017 - Jul 2019",
 			responsibilities: [
-				"Built responsive web interfaces using HTML, CSS, and JavaScript",
-				"Maintained legacy codebases and participated in Agile ceremonies",
+				"Built responsive web interfaces using HTML, CSS, and JavaScript, with attention to cross-browser behavior",
+				"Maintained legacy code and collaborated in Agile ceremonies to ship incremental improvements",
 			],
 		},
 	];

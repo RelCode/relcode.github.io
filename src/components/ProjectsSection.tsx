@@ -13,44 +13,44 @@ const Projects: React.FC = () => {
       title: 'E-Commerce Platform',
       technologies: 'React, Node.js, MongoDB, PayFast API',
       description: [
-        'Developed full-stack e-commerce application with user authentication and payment processing',
-        'Implemented RESTful API with Express.js serving multiple client applications',
-        'Integrated PayFast payment gateway for secure transactions',
+        'Built a full-stack e-commerce application with authentication, product browsing, and checkout flows',
+        'Designed and implemented REST APIs with Express.js to support core storefront operations',
+        'Integrated PayFast payments with secure transaction handling and clear error states for users',
       ],
     },
     {
       title: 'CRM System',
-      technologies: 'React, TypeScript, PHP, MySQL, Material-UI',
+      technologies: 'React, TypeScript, PHP, MySQL',
       description: [
-        'Built collaborative task management tool with real-time synchronization',
-        'Designed responsive UI with modern components',
-        'Implemented role-based access control and team collaboration features',
+        'Developed a CRM-style workflow tool for task tracking and team collaboration',
+        'Implemented role-based access control and permissions for safer multi-user operation',
+        'Built responsive UI patterns and backend endpoints to support day-to-day operations',
       ],
     },
     {
       title: 'Ledger App',
       technologies: 'React Native, Supabase, Render',
       description: [
-        'Created mobile application for personal finance tracking with offline capabilities',
-        'Utilized Supabase for backend services including authentication and database management',
-        'Deployed backend on Render for scalable and reliable performance',
+        'Created a mobile app for personal finance tracking with a focus on usability and data integrity',
+        'Used Supabase for authentication and persistence, keeping the system simple and maintainable',
+        'Deployed supporting services on Render for straightforward environments and repeatable releases',
       ],
     },
     {
         title: 'LLM-as-a-Judge Platform',
         technologies: 'Python, FastAPI, Azure OpenAI + DeepSeek-3b params local, Podman',
         description: [
-            'Developed a platform leveraging large language models to act as judges in legal scenarios',
-            'Implemented FastAPI backend to handle requests and manage AI interactions',
-            'Utilized Azure OpenAI services for advanced natural language processing capabilities',
-            'Containerized application using Podman for consistent deployment across environments',
+            'Built an evaluation-focused platform that uses LLMs as judges for scenario-based assessments',
+            'Implemented a FastAPI backend for orchestration, prompt execution, and response handling',
+            'Integrated Azure OpenAI and a local model option to support different execution environments',
+            'Containerized with Podman to keep runs consistent across machines and deployments',
         ]
     }
   ];
 
   return (
     <section className="projects-section">
-      <h3 className="section-title">Projects</h3>
+      <h3 className="section-title">Featured Work</h3>
       {projects.map((project, index) => (
         <div key={index} className="project-item">
           <h4 className="project-title">{project.title}</h4>

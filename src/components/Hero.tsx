@@ -51,7 +51,7 @@ const ResumeHeader: React.FC = () => {
             I do <span className="typewriter">{text}</span>
             <span className="cursor">|</span>
           </h2>
-          <p className="tagline">Senior Software Engineer • Remote-first • AI &amp; Full-stack</p>
+          <p className="tagline">Software Engineer (7+ years) • Remote-first • AI &amp; Full-stack</p>
           <p className="hero-pitch">
             I build and maintain production-grade web applications and AI-adjacent tooling — with a focus on reliability,
             performance, and clean engineering practices.

@@ -1,10 +1,11 @@
 import React from 'react';
 import ResumeHeader from './components/Hero';
 import Summary from './components/About';
-import Experience from './components/Projects';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import ProjectsSection from './components/ProjectsSection';
+import Services from './components/Services';
+import Experience from './components/Projects';
 import './App.css';
 
 function App() {
@@ -14,13 +15,15 @@ function App() {
         <ResumeHeader />
         <Summary />
         <div className="divider"></div>
+        <Services />
+        <div className="divider"></div>
+        <ProjectsSection />
+        <div className="divider"></div>
         <Skills />
         <div className="divider"></div>
         <Experience />
         <div className="divider"></div>
         <Education />
-        <div className="divider"></div>
-        <ProjectsSection />
       </div>
     </div>
   );
