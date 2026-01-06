@@ -48,8 +48,10 @@ const ResumeHeader: React.FC = () => {
         <div className="header-text">
           <h1 className="name"><i>Lebo</i> Nkosi</h1>
           <h2 className="title">
-            I do <span className="typewriter">{text}</span>
-            <span className="cursor">|</span>
+            <span className="screen-only">
+              I do <span className="typewriter">{text}</span>
+              <span className="cursor">|</span>
+            </span>
           </h2>
           <p className="tagline">Software Engineer (7+ years) • Remote-first • AI &amp; Full-stack</p>
           <p className="hero-pitch">
@@ -75,12 +77,16 @@ const ResumeHeader: React.FC = () => {
         Availability: Remote contract work • After-hours support (17:00–02:00 SAST) • U.S. time zones friendly
       </div>
       <div className="social-links">
+        <a href="https://github.com/RelCode" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <span className="separator">|</span>
         <a href="https://www.linkedin.com/in/relebohile-nkosi-792b99106/" target="_blank" rel="noopener noreferrer">
           LinkedIn
         </a>
-        <span className="separator">|</span>
-        <a href="https://github.com/RelCode" target="_blank" rel="noopener noreferrer">
-          GitHub
+        <span className="print-only separator">|</span>
+        <a href="https://relcode.github.io/" className='print-only' target="_blank" rel="noopener noreferrer">
+            Portfolio
         </a>
       </div>
       <div className="header-divider"></div>

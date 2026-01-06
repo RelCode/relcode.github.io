@@ -89,6 +89,14 @@
   font-weight: 300;
 }
 
+.screen-only {
+  display: inline;
+}
+
+.print-only {
+  display: none;
+}
+
 @keyframes blink {
   0%, 50% {
     opacity: 1;
@@ -204,6 +212,18 @@
 }
 
 @media print {
+  .screen-only {
+    display: none;
+  }
+
+  .print-only {
+    display: inline;
+  }
+
+  .resume-header .cursor {
+    display: none;
+  }
+
   .profile-placeholder {
     width: 100px;
     height: 100px;
