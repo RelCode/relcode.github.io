@@ -44,3 +44,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## AI Chat (Cloudflare Worker)
+
+This portfolio includes an optional AI chatbot UI in the footer. The UI calls a Cloudflare Worker so no OpenAI secrets are ever shipped to the browser.
+
+- Frontend env var: `REACT_APP_AI_CHAT_API_URL` (set this in your local environment / CI)
+- Worker setup: see [worker/README.md](worker/README.md)

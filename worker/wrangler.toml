@@ -1,0 +1,16 @@
+name = "portfolio-chat"
+main = "src/index.ts"
+compatibility_date = "2026-01-06"
+
+[vars]
+# Replace this with your GitHub Pages URL or a custom domain.
+PROFILE_URL = "https://relcode.github.io/ai/profile.md"
+# Comma-separated origins allowed to call the API.
+ALLOWED_ORIGINS = "https://relcode.github.io,https://RelCode.github.io,http://localhost:3000"
+# Pick any OpenAI model you have access to.
+OPENAI_MODEL = "gpt-4o-mini"
+
+[env.dev.vars]
+PROFILE_URL = "http://localhost:3000/ai/profile.md"
+ALLOWED_ORIGINS = "http://localhost:3000"
+OPENAI_MODEL = "gpt-4o-mini"
