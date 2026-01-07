@@ -1,0 +1,116 @@
+.footer-chatbot {
+  position: fixed;
+  bottom: 80px;
+  right: 25px;
+  width: min(360px, calc(100vw - 50px));
+  max-height: 60vh;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 50;
+
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 220ms ease;
+}
+
+.footer-chatbot.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.footer-chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.footer-chatbot-title {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+.footer-chatbot-close {
+  appearance: none;
+  border: 1px solid #1a1a1a;
+  background: transparent;
+  color: #1a1a1a;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.footer-chatbot-body {
+  padding: 0.75rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.msg {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #1a1a1a;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  white-space: pre-wrap;
+}
+
+.msg.user {
+  align-self: flex-end;
+}
+
+.msg.assistant {
+  align-self: flex-start;
+}
+
+.footer-chatbot-error {
+  color: #8a1f1f;
+  font-size: 0.85rem;
+}
+
+.footer-chatbot-input {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-top: 1px solid #ccc;
+}
+
+.footer-chatbot-text {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.92rem;
+}
+
+.footer-chatbot-send {
+  border: 1px solid #1a1a1a;
+  background: #1a1a1a;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.footer-chatbot-send:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

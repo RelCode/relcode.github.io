@@ -1,50 +1,110 @@
 /* Main App Styles */
 .app-container {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
-  padding: 2rem 1rem;
-  font-family: 'Georgia', 'Times New Roman', serif;
+    position: relative;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #e8e8e8 0%, #d4d4d4 100%);
+	padding: 2rem 1rem;
+	font-family: "Georgia", "Times New Roman", serif;
 }
 
 .resume-paper {
-  max-width: 850px;
-  margin: 0 auto;
-  background: white;
-  padding: 3rem;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+	max-width: 850px;
+	margin: 0 auto;
+	background: white;
+	padding: 3rem;
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
 }
 
 .divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent);
-  margin: 1.5rem 0;
+	height: 1px;
+	background: linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent);
+	margin: 1.5rem 0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .app-container {
-    padding: 1rem 0.5rem;
-  }
-  
-  .resume-paper {
-    padding: 1.5rem;
-  }
+	.app-container {
+		padding: 1rem 0.5rem;
+	}
+
+	.resume-paper {
+		padding: 1.5rem;
+	}
+}
+
+.footer {
+	position: fixed;
+	bottom: 25px;
+	right: 25px;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	transition: opacity 180ms ease, transform 220ms ease;
+	transform: translateY(0);
+}
+
+.footer-hidden {
+	opacity: 0;
+	transform: translateY(10px);
+	pointer-events: none;
+}
+
+.footer > .chatbot-icon {
+    font-size: 0.9rem;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #666;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.chatbot-container {
+	appearance: none;
+	border: 1px solid #ccc;
+	background: #fff;
+	color: #1a1a1a;
+	border-radius: 999px;
+	padding: 0.4rem 0.6rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+}
+
+.chatbot-text {
+	font-size: 0.85rem;
+	font-weight: 700;
+}
+
+.chatbot-separator {
+	width: 1px;
+	height: 18px;
+	background: #ccc;
+}
+
+.footer > button.chatbot-icon {
+	appearance: none;
+	border: none;
 }
 
 @media print {
-  .app-container {
-    background: white;
-    padding: 0;
-  }
-  
-  .resume-paper {
-    box-shadow: none;
-    padding: 0.5in;
-    max-width: 100%;
-  }
-  
-  .divider {
-    background: #333;
-  }
+	.app-container {
+		background: white;
+		padding: 0;
+	}
+
+	.resume-paper {
+		box-shadow: none;
+		padding: 0.5in;
+		max-width: 100%;
+	}
+
+	.divider {
+		background: #333;
+	}
 }
