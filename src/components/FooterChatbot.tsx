@@ -5,10 +5,12 @@ import "./FooterChatbot.css";
 type ChatMessage = {
 	role: "user" | "assistant";
 	content: string;
+	countsAsQuestion?: boolean; // Only set for user messages
 };
 
 type ChatResponse = {
 	answer: string;
+	countsAsQuestion?: boolean;
 };
 
 type Props = {
@@ -19,6 +21,7 @@ type Props = {
 const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 	const [isMounted, setIsMounted] = useState(false);
 	const [isVisible, setIsVisible] = useState(false);
+	const [questionCount, setQuestionCount] = useState(0);
 
 	const [messages, setMessages] = useState<ChatMessage[]>([
 		{
@@ -39,6 +42,43 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 			"https://portfolio-chat.princefana7.workers.dev/api/chat"
 		);
 	}, []);
+
+	// Load question count from localStorage on mount
+	useEffect(() => {
+		const stored = localStorage.getItem("chatbot_usage");
+		if (stored) {
+			try {
+				const data = JSON.parse(stored);
+				const now = Date.now();
+				const expiryTime = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
+				
+				if (data.timestamp && now - data.timestamp < expiryTime) {
+					// Not expired yet
+					setQuestionCount(data.count || 0);
+				} else {
+					// Expired, clear it
+					localStorage.removeItem("chatbot_usage");
+					setQuestionCount(0);
+				}
+			} catch {
+				localStorage.removeItem("chatbot_usage");
+				setQuestionCount(0);
+			}
+		}
+	}, []);
+
+	// Save question count to localStorage whenever it changes
+	useEffect(() => {
+		if (questionCount > 0) {
+			localStorage.setItem(
+				"chatbot_usage",
+				JSON.stringify({
+					count: questionCount,
+					timestamp: Date.now(),
+				})
+			);
+		}
+	}, [questionCount]);
 
 	useEffect(() => {
 		if (isOpen) {
@@ -68,8 +108,7 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 		el.scrollTop = el.scrollHeight;
 	}, [isOpen, messages, isLoading, error]);
 
-	const askedCount = messages.filter((m) => m.role === "user").length;
-	const questionsLeft = Math.max(0, 3 - askedCount);
+	const questionsLeft = Math.max(0, 3 - questionCount);
 	const hasQuestionsLeft = questionsLeft > 0;
 	const canSend = question.trim().length > 0 && !isLoading && hasQuestionsLeft;
 
@@ -83,7 +122,7 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 				{
 					role: "assistant",
 					content:
-						"Wish limit reached — that’s 3 questions for this session. Refresh the page to ask again, or email Lebo if you want to chat further.",
+						"Question limit reached — that's 3 questions for this session. Your limit will reset in 12 hours, or you can email Lebo directly if you want to chat further.",
 				},
 			]);
 			return;
@@ -93,6 +132,7 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 		setQuestion("");
 		setIsLoading(true);
 
+		// Add user message
 		setMessages((prev) => [...prev, { role: "user", content: trimmed }]);
 
 		try {
@@ -108,6 +148,12 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 			}
 
 			const data = (await res.json()) as ChatResponse;
+			
+			// Only increment count if this was an actual question (not greeting/clarification)
+			if (data.countsAsQuestion !== false) {
+				setQuestionCount((prev) => prev + 1);
+			}
+
 			setMessages((prev) => [...prev, { role: "assistant", content: data.answer }]);
 		} catch (err) {
 			const message = err instanceof Error ? err.message : "Unknown error";
