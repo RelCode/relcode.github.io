@@ -1,0 +1,304 @@
+
+{
+	"_metadata": {
+		"description": "This JSON contains biographical and professional information about Lebo Nkosi. When answering user queries, analyze the question to determine which attributes are relevant.",
+		"available_attributes": [
+			"identity",
+			"early_life",
+			"current_interests",
+			"professional_background",
+			"soft_skills_and_work_style",
+			"skills",
+			"databases",
+			"devops_and_tooling",
+			"cloud",
+			"projects",
+			"future_goals_and_aspirations",
+			"contact"
+		],
+		"query_handling": "If a user question is ambiguous and could be answered by multiple attributes (e.g., 'tell me about Lebo' or 'what are Lebo's skills'), return an array of relevant keys and synthesize a comprehensive answer from those sections."
+	},
+	"identity": {
+		"name": "Lebo Nkosi",
+		"role": "Software Engineer / Full-Stack Engineer",
+		"experience_years": "7+",
+		"current_employer": "LexisNexis",
+		"location_grew_up": "Katlehong, Zonkizizwe",
+		"personal_life": "Father, enjoys spending time with family",
+		"favorite_motto": "2 plus 2 equals 4, so is 3 plus 1. Don't lose yourself just because you think people are doing things you are not doing and seemingly getting ahead. We all have different paths to take, even though the destination is the same.",
+		"motto_meaning": "There are multiple paths to success. Stay true to your own journey and don't compare your progress to others."
+	},
+	"early_life": {
+		"primary_school": {
+			"name": "Zonkizizwe Primary School",
+			"location": "Zonkizizwe, Katlehong",
+			"years": "2001-2007 (Grade 1 through Grade 7)",
+			"fun_fact": "Lebo was a decent goalkeeper for a mini football team. They played matches after school from 2pm to 5pm."
+		},
+		"secondary_school": {
+			"name": "Zonkizizwe Secondary School",
+			"location": "Zonkizizwe, Katlehong",
+			"years": "2008-2013 (Grade 8 through Matric)",
+			"stream": "Science stream (chosen in Grade 10)",
+			"character": "Bright but lazy kid with ambitions outside the school gate",
+			"turning_point": {
+				"event": "Repeated Grade 10 due to lack of focus on academics while concentrating on side projects",
+				"lesson": "Academics were never his first option, but he realized he could still chase his goals without abandoning school. The introspection that came with repeating helped him refocus.",
+				"outcome": "After repeating Grade 10, he propelled straight through to completing Matric successfully",
+				"significance": "This experience taught him balance and that you don't have to choose between passion projects and education - you can pursue both"
+			},
+			"fun_fact": "During secondary school, Lebo's love for wrestling intensified. He and two friends formed a group called 'The Shield' - timing perfectly with Roman Reigns, Seth Rollins, and Dean Ambrose making their WWE debut as The Shield."
+		},
+		"childhood_interests": {
+			"hobbies": [
+				"Playing video games",
+				"Watching anime",
+				"WWE wrestling (avid fan)",
+				"Football (goalkeeper position)"
+			],
+			"creative_projects": [
+				"Made WWE championship titles using discarded cardboard boxes",
+				"Built a working water faucet using a 2-liter bottle, puncturing a hole in the side and inserting a straw - the bottle cap acted as a functional faucet"
+			],
+			"personality": "Had a playful and fun childhood, with strong hands-on creative abilities"
+		},
+		"path_to_programming": {
+			"primary_driver": "Curiosity",
+			"story": "Lebo was deeply curious about how things worked - from light bulbs to TVs. As a child, he would close the refrigerator door very slowly to figure out what made the light go off (which he eventually solved). This curiosity led to taking things apart to understand their inner workings and then putting them back together.",
+			"building_things": "The second key factor was a love for making and building things. With Tony Stark as his favorite comic character, building came naturally. Programming became the perfect outlet - a way to build cool things.",
+			"summary": "Curiosity about how things work + love of building things = path to programming"
+		},
+		"tertiary_education": {
+			"self_taught_period": {
+				"years": "2013-2015 (post-matric)",
+				"story": "After completing matric, Lebo received an old laptop (probably third or even fourth-hand) as a gift from a friend. This became his gateway to programming.",
+				"learning": "Used the laptop to teach himself how to code, starting with HTML, CSS, and JavaScript. He went on to write scripts that performed various functions.",
+				"mindset": "Was certain he would make it as a self-taught developer",
+				"reality_check": "Unfortunately, breaking into the industry as self-taught proved challenging. While continuing to work on his skills and waiting for opportunities, he decided to pursue formal education.",
+				"significance": "This period shows resourcefulness and determination - learning to code with minimal resources and a laptop that had passed through multiple owners"
+			},
+			"formal_education": {
+				"institution": "University of Johannesburg (UJ)",
+				"qualification": "IT Diploma",
+				"applied": "2015",
+				"years": "2016-2019 (3 years)",
+				"approach": "Applied for the IT diploma while continuing to self-learn and improve his skills, combining formal education with his ongoing personal development"
+			}
+		}
+	},
+	"current_interests": {
+		"entertainment": {
+			"gaming": "Loves playing console games (continued from childhood)",
+			"series": "Enjoys watching series, mostly thrillers and comedy"
+		},
+		"family": "Father who loves spending time with family",
+		"reading": {
+			"evolution": "Started reading heavily. Unlike before when it was just tech stuff, now casts his net wider in hopes of catching more knowledge to be a well-rounded individual",
+			"goal": "Becoming a well-rounded person through diverse reading"
+		},
+		"physical_activities": [
+			"Enjoys walks",
+			"Running"
+		],
+		"from_childhood": "Still maintains some childhood interests (gaming, watching entertainment) but has evolved them alongside new adult responsibilities and pursuits"
+	},
+	"professional_background": {
+		"current_focus": "Recent focus (last ~2 years): Python-heavy backend work, integrations, and AI-enabled capabilities",
+		"current_role": "LexisNexis — Software Engineer",
+		"experience_type": "Enterprise exposure building production web applications and AI-adjacent tooling",
+		"full_stack_profile": "Capable across backend (Python, PHP), frontend (ReactJS, React Native), and mobile development",
+		"career_journey": {
+			"first_role": {
+				"company": "Abangani Media",
+				"position": "Software Development Intern",
+				"years": "2017-2019 (2 years)",
+				"location": "Braamfontein",
+				"context": "While in his second year of university, Lebo's friend (who gave him the laptop) connected him with a math teacher turned entrepreneur who ran a small software development company.",
+				"how_he_got_it": "Asked his friend for the contact number and successfully scored an internship at the small Braamfontein-based company.",
+				"significance": "First professional software development experience, worked while completing his IT diploma"
+			},
+			"second_role": {
+				"company": "Prolific Technologies (Prolifix)",
+				"position": "System Automator specializing in Web Development / One-man IT Team",
+				"years": "2019-2021 (approximately)",
+				"how_he_found_it": "Found an ad on Gumtree (not LinkedIn or Facebook) as his final academic year was ending in 2019. Met with one of the two founding partners.",
+				"company_context": "Small company (less than 6 people when he started) specializing in engineering, not tech. Lebo was the only person with a tech background.",
+				"responsibilities": [
+					"Full IT infrastructure: server installation and setup",
+					"Network setup: router positioning",
+					"Hardware: setting up handheld scanners",
+					"On-site support: traveling to clients to help with queries and issues",
+					"Web application development: building apps for engineering/manufacturing clients to capture data from various production processes"
+				],
+				"challenges": {
+					"no_senior_support": "Only developer on the team - no senior to mentor or guide him despite having very little experience",
+					"high_expectations": "Everything had to run smoothly all the time",
+					"covid_context": "Started during COVID-19 restrictions (2019/20/21), had to travel from client to client despite lockdowns",
+					"learning_curve": "Hectic introduction to the industry as a full-time employee"
+				},
+				"client_work": "Built web applications for engineering companies specializing in production/manufacturing to help them capture data from various processes",
+				"assessment": "Enjoyable but challenging work. Wore many hats - from infrastructure to development to on-site support."
+			},
+			"third_role": {
+				"company": "Eezipay Management System",
+				"industry": "Fintech",
+				"position": "Software Developer",
+				"years": "October 2022 - July 2023 (1 year, 4 months)",
+				"location": "Stellenbosch, Western Cape",
+				"motivation": "After almost 3 years at Prolifix, wanted something more challenging. Grew up in Gauteng and had never been outside the province. Believed Cape Town was the Silicon Valley of South Africa since every major tech company has HQ there.",
+				"how_he_got_it": "Applied through a talent agent who revamped his resume and connected him with the company",
+				"experience": "Great fit when he started. Transitioned from an engineering-focused company to fintech.",
+				"departure_reason": "Had to return home to Gauteng to attend to family issues. Left to be present for family while continuing his career."
+			},
+			"current_role_detail": {
+				"company": "LexisNexis",
+				"industry": "Legal Tech (Global)",
+				"position": "Software Engineer",
+				"years": "2023 - Present",
+				"how_he_got_it": "Found via OfferZen. While handling family matters at home, he completed a profile on OfferZen because he needed to continue working. Interview rounds were a smooth success and he received a letter of employment.",
+				"admission": "Had never heard of LexisNexis before applying",
+				"work_focus": "AI-enabled capabilities, Python-heavy backend work, integrations",
+				"career_progression_summary": "From web development intern → engineering company (one-man IT team) → fintech → global legal tech doing AI work"
+			}
+		}
+	},
+	"soft_skills_and_work_style": {
+		"self_assessment": "Soft skills have always been a work-in-progress for him - shows humility and continuous growth mindset",
+		"problem_solving": {
+			"approach": "Loves solving problems. Sometimes finds himself way out of his depth, but still tries to find ways to understand problems.",
+			"method": "Explores and experiments with practical solutions",
+			"asks_for_help": "Doesn't mind reaching out when struggling with something"
+		},
+		"mentorship": {
+			"current_situation": "Currently mentoring a junior AND being mentored by a senior",
+			"experience": "It's been a great experience",
+			"key_insight": "While he loves learning from his senior, he's discovered that he learns the most by trying to help his junior",
+			"loves_helping": "Loves helping others"
+		},
+		"work_style": {
+			"preference": "More independent but always makes the most of opportunities when pairing up with another developer",
+			"current_setup": "100% remote, working with a UK team",
+			"adaptability": "Sometimes has to solo problems, other times collaborates to foster great working relationships with overseas teammates",
+			"flexibility": "Good in both on-site and remote settings"
+		},
+		"collaboration": "Values both independent work and collaborative opportunities. Actively works to build strong relationships with international team members"
+	},
+	"skills": {
+		"_note": "Skills are organized by category. For general 'skills' queries, include all categories below.",
+		"backend": {
+			"primary_language": "Python (recent primary backend language for the last ~2 years)",
+			"frameworks": [
+				"FastAPI (Python)",
+				"Laravel (PHP framework)"
+			],
+			"languages": [
+				"Python",
+				"PHP (professional experience)"
+			],
+			"specialties": [
+				"API design and integrations",
+				"AI-enabled capabilities",
+                "Database Management and Optimization"
+			]
+		},
+		"frontend": {
+			"frameworks": [
+				"ReactJS (web frontend)",
+				"React Native (mobile)"
+			],
+			"languages": [
+				"TypeScript",
+				"JavaScript"
+			]
+		}
+	},
+	"databases": [
+		"MySQL",
+        "MS SQL Server",
+        "PostgreSQL",
+		"NoSQL databases",
+		"SQLite (used in some mobile contexts)"
+	],
+	"devops_and_tooling": [
+		"Dockerized development environments",
+		"Pragmatic engineering practices: testing, code reviews, maintainable architecture"
+	],
+	"cloud": {
+		"platforms": "AWS",
+		"status": "Interested in AWS services and actively learning",
+		"certifications": "No AWS certification currently, but have had the opportunity to work with AWS services in projects and that has been a great learning experience"
+	},
+	"projects": {
+		"featured": [
+			{
+				"name": "LLM-as-a-Judge platform",
+				"description": "Evaluation-focused platform with FastAPI backend",
+				"tech_stack": "FastAPI, Azure OpenAI, local model option, containerized runs",
+				"category": "AI/ML"
+			},
+			{
+				"name": "Agentic AI Auditing Project",
+				"description": "Currently working on an agentic AI project for auditing",
+				"status": "In development",
+				"category": "AI/ML"
+			},
+			{
+				"name": "Ledger Mobile App",
+				"description": "Mobile ledger application for small vendors",
+				"tech_stack": "React Native, hybrid database approach (local + Supabase)",
+				"database_approach": "Uses both local storage and Supabase for data persistence",
+				"category": "Mobile/Fintech"
+			}
+		],
+		"websites": [
+			{
+				"name": "Prolifix.co.za",
+				"description": "Created the website for Prolific Technologies",
+				"context": "Built for his former employer"
+			}
+		],
+		"open_source_and_tools": [
+			{
+				"name": "PHP MVC Router",
+				"description": "PHP routing application",
+				"repository": "https://github.com/RelCode/php-mvc-router",
+				"category": "Backend tooling"
+			},
+			{
+				"name": "Custom Tooltip Component",
+				"description": "Tooltip component forked from chariot-tooltip project",
+				"status": "Still in production on Eezipay's online platform and web apps",
+				"significance": "A component he created at a previous company that remains in active production use",
+				"category": "Frontend tooling"
+			}
+		],
+		"professional_work": {
+			"type": "Full-stack and integration work",
+			"scope": "Across web and mobile products",
+			"shipped_projects": "A bunch of shipped projects across various companies"
+		}
+	},
+	"future_goals_and_aspirations": {
+		"primary_focus_areas": [
+			"AI development",
+			"Cloud technologies"
+		],
+		"specialization": "Wants to specialize in AI and Cloud - these two concepts are always on his mind",
+		"technical_goals": {
+			"immediate": "Working on getting AWS certified",
+			"preference": "Wants to stick to AI development - has been really enjoying it"
+		},
+		"career_goals": {
+			"short_to_medium_term": "Reach Lead Developer level after a few years",
+			"industry_preference": "No specific industries in mind, but wants to continue with AI development"
+		},
+		"personal_aspirations": {
+			"long_term_vision": "After 15-20 years, go work in the U.S. or UK before coming back home to South Africa to retire",
+			"ultimate_goal": "Gain international experience before returning home"
+		},
+		"progression_path": "Current Software Engineer → Lead Developer → International experience (US/UK) → Return to South Africa"
+	},
+	"contact": {
+		"fallback_message": "If something isn't covered in this knowledge base, suggest contacting Lebo directly."
+	}
+}
