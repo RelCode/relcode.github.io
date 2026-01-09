@@ -62,7 +62,7 @@ const ResumeHeader: React.FC = () => {
 				<div className="contact-item">
 					<a
 						href={
-							"mailto:nkosir2022@gmail.com?subject=Engineer%20availability%20inquiry&body=Hi%20Lebo%2C%0A%0AI%27d%20like%20help%20with%3A%20%0A%0AContext%2Flinks%3A%20%0ADeadline%3A%20%0AExpected%20hours%2Fweek%3A%20%0A%0AThanks%2C"
+							"mailto:nkosir2022@gmail.com?subject=Opportunity%20Inquiry&body=Hi%20Lebo%2C%0A%0AI%27m%20reaching%20out%20regarding%3A%20%0A%0ADetails%3A%20%0A%0ATimeline%3A%20%0A%0AThanks%2C"
 						}
 					>
 						nkosir2022@gmail.com

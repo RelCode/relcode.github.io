@@ -62,10 +62,11 @@ async function fetchProfileJson(env: Env): Promise<ProfileJson> {
 async function classifyMessage(env: Env, message: string): Promise<{ type: "greeting" | "clarification" | "question"; shouldCount: boolean }> {
 	const system =
 		"You classify user messages into three types:\n" +
-		'1. "greeting" - greetings, salutations, pleasantries (hi, hello, hey, good morning, how are you, etc.)\n' +
+		'1. "greeting" - greetings, salutations, pleasantries (hi, hello, hey, good morning, how are you, thanks, etc.)\n' +
 		'2. "clarification" - questions about the chatbot rules, functionality, or how to use it (not about Lebo)\n' +
-		'3. "question" - actual questions seeking information about Lebo\'s profile, skills, experience, etc.\n\n' +
-		'Return ONLY the type as a single word: "greeting", "clarification", or "question".';
+		'3. "question" - actual questions seeking information about Lebo\'s profile, skills, experience, education, background, etc.\n\n' +
+		"Important: Be semantic-aware. Questions about education (high school, university, college, tertiary, studies) are questions about Lebo, not clarifications.\n" +
+		'Return ONLY the type as a single word: "greeting", "clarification", or "question".';;
 
 	const res = await fetch("https://api.openai.com/v1/responses", {
 		method: "POST",
@@ -108,11 +109,18 @@ async function selectKeysWithOpenAI(
 ): Promise<string[]> {
 	const system =
 		"You route user questions to knowledge-base section keys. " +
-		"Analyze the question and return one or more relevant keys from the provided list. " +
+		"Analyze the question semantically and return one or more relevant keys from the provided list. " +
 		'For broad questions (e.g., "tell me about Lebo", "what are the skills"), return multiple relevant keys as a comma-separated list. ' +
 		"For specific questions, return just the most relevant key. " +
-		'If none fit, return "contact".' +
-        "Be careful of ambiguity, e.g, (high school and secondary school means the same thing). Sometimes users will ask questions that loosely means something you might think it's not covered. Think deeply in cases like those one"
+		'If none fit, return "contact". ' +
+		"\n\nSemantic awareness rules:\n" +
+		"- Education: 'high school' = 'secondary school', 'college'/'university'/'tertiary' = 'tertiary_education'\n" +
+		"- Skills: 'programming'/'coding'/'development' all relate to 'skills'\n" +
+		"- Work: 'job'/'employment'/'career'/'position'/'role' all relate to 'professional_background' or 'career_journey'\n" +
+		"- Background: 'childhood'/'upbringing'/'growing up' relate to 'early_life'\n" +
+		"- Personal: 'hobbies'/'interests'/'outside work' relate to 'current_interests'\n" +
+		"- Future: 'goals'/'aspirations'/'ambitions'/'plans' relate to 'future_goals_and_aspirations'\n" +
+		"Think contextually and match intent, not just keywords.";
 
 	const input =
 		`Available keys:\n${keys.join(", ")}\n\n` +
@@ -157,15 +165,21 @@ async function selectKeysWithOpenAI(
 
 async function answerWithOpenAI(env: Env, question: string, context: string): Promise<string> {
 	const system =
-		"You are a portfolio assistant. Answer ONLY using the provided knowledge base context. " +
+		"You are a portfolio assistant for Lebo Nkosi. Answer ONLY using the provided knowledge base context. " +
 		'Treat stated experience/skills as affirmative evidence (e.g., if context says PHP/Laravel experience, answer "yes" to "Have you worked with PHP?"). ' +
-        'Watch for words with loose similarity such as high school and secondary since they mean the same thing but the knowledge base only covers secondary school.' +
-		"If the answer is not in the context, say something witty and fun like 'You might want to hire Lebo and ask him about that'";
+		"\n\nSemantic understanding:\n" +
+		"- 'High school' = 'secondary school' (South African terminology)\n" +
+		"- 'College'/'university'/'tertiary' refer to post-secondary education\n" +
+		"- 'Coding'/'programming'/'development' are interchangeable\n" +
+		"- When asked about education/school, check both 'primary_school', 'secondary_school', and 'tertiary_education' sections\n" +
+		"- Be conversational and natural in your responses\n" +
+		"- If the information exists in context but uses different terminology, translate appropriately\n\n" +
+		"If the answer is truly not in the context, respond warmly: 'That's a great question! The knowledge base doesn't cover that detail, but you could reach out to Lebo directly to learn more.'";
 
 	const input =
 		`Knowledge base context:\n\n${context}\n\n` +
 		`User question: ${question}\n\n` +
-		"Answer in a concise, recruiter-friendly way.";
+		"Answer naturally and conversationally, as if you're a knowledgeable assistant who knows Lebo well. Be concise but friendly.";
 
 	const res = await fetch("https://api.openai.com/v1/responses", {
 		method: "POST",
