@@ -114,12 +114,18 @@ async function selectKeysWithOpenAI(
 		"For specific questions, return just the most relevant key. " +
 		'If none fit, return "contact". ' +
 		"\n\nSemantic awareness rules:\n" +
-		"- Education: 'high school' = 'secondary school', 'college'/'university'/'tertiary'/'qualification'/'degree'/'diploma'/'BTech' = 'early_life' (which contains tertiary_education)\n" +
-		"- Skills: 'programming'/'coding'/'development' all relate to 'skills'\n" +
-		"- Work: 'job'/'employment'/'career'/'position'/'role' all relate to 'professional_background' or 'career_journey'\n" +
-		"- Background: 'childhood'/'upbringing'/'growing up' relate to 'early_life'\n" +
-		"- Personal: 'hobbies'/'interests'/'outside work' relate to 'current_interests'\n" +
-		"- Future: 'goals'/'aspirations'/'ambitions'/'plans' relate to 'future_goals_and_aspirations'\n" +
+		"- Education: 'high school'/'secondary school'/'college'/'university'/'tertiary'/'qualification'/'degree'/'diploma'/'BTech'/'studies' = 'early_life'\n" +
+		"- Skills/Tech: 'programming'/'coding'/'development'/'languages'/'frameworks'/'technologies'/'tech stack' = 'skills'\n" +
+		"- Databases: 'database'/'DB'/'SQL'/'NoSQL'/'data storage'/'PostgreSQL'/'MongoDB'/'MySQL' = 'databases'\n" +
+		"- DevOps: 'DevOps'/'CI/CD'/'Docker'/'containers'/'deployment'/'infrastructure'/'tooling' = 'devops_and_tooling'\n" +
+		"- Cloud: 'cloud'/'AWS'/'Azure'/'GCP'/'serverless'/'hosting' = 'cloud'\n" +
+		"- Work: 'job'/'employment'/'career'/'position'/'role'/'experience'/'companies'/'work history' = 'professional_background'\n" +
+		"- Background: 'childhood'/'upbringing'/'growing up'/'where from'/'hometown' = 'early_life'\n" +
+		"- Personal: 'hobbies'/'interests'/'outside work'/'free time'/'personal life' = 'current_interests'\n" +
+		"- Projects: 'projects'/'portfolio'/'built'/'created'/'apps'/'applications' = 'projects'\n" +
+		"- Soft skills: 'communication'/'teamwork'/'work style'/'personality'/'strengths' = 'soft_skills_and_work_style'\n" +
+		"- Future: 'goals'/'aspirations'/'ambitions'/'plans'/'next'/'where headed' = 'future_goals_and_aspirations'\n" +
+		"- Broad tech questions (e.g., 'what tech does he use?'): return 'skills, databases, devops_and_tooling, cloud'\n" +
 		"Think contextually and match intent, not just keywords.";
 
 	const input =
@@ -173,6 +179,8 @@ async function answerWithOpenAI(env: Env, question: string, context: string): Pr
 		"- 'Qualification'/'degree'/'diploma'/'BTech' questions should check 'tertiary_education' or 'formal_education' sections\n" +
 		"- 'Coding'/'programming'/'development' are interchangeable\n" +
 		"- When asked about education/school/qualifications, check 'primary_school', 'secondary_school', 'tertiary_education', and 'formal_education' sections\n" +
+		"- Technology questions may span multiple sections: skills, databases, devops_and_tooling, cloud\n" +
+		"- If asked about specific tech (e.g., 'Does he know Docker?'), search across all provided context sections\n" +
 		"- Be conversational and natural in your responses\n" +
 		"- If the information exists in context but uses different terminology, translate appropriately\n\n" +
 		"If the answer is truly not in the context, respond warmly: 'That's a great question! The knowledge base doesn't cover that detail, but you could reach out to Lebo directly to learn more.'";

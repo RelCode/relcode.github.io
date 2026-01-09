@@ -230,8 +230,10 @@
 		"SQLite (used in some mobile contexts)"
 	],
 	"devops_and_tooling": [
-		"Dockerized development environments",
-		"Pragmatic engineering practices: testing, code reviews, maintainable architecture"
+		"Dockerized development environments (familiar with both Docker and Podman)",
+		"Pragmatic engineering practices: testing, code reviews, maintainable architecture",
+        "Git and version control workflows",
+        "CI/CD pipelines (basic understanding and some hands-on experience)"
 	],
 	"cloud": {
 		"platforms": "AWS",
@@ -262,7 +264,7 @@
 		],
 		"websites": [
 			{
-				"name": "Prolifix.co.za",
+				"name": "https://prolifix.co.za",
 				"description": "Created the website for Prolific Technologies",
 				"context": "Built for his former employer"
 			}
