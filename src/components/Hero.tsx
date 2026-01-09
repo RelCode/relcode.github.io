@@ -78,7 +78,7 @@ const ResumeHeader: React.FC = () => {
 				</div>
 			</div>
 			<div className="availability">
-				Availability: Remote contract work • After-hours support (17:00–02:00 SAST) • U.S. time zones friendly
+				Availability: Remote contract work • After-hours support (17:00–02:00 SAST) • U.S. time zones friendly • Weekends, too!
 			</div>
 			<div className="social-links">
 				<a href="https://github.com/RelCode" target="_blank" rel="noopener noreferrer">
