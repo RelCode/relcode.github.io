@@ -2,6 +2,10 @@ name = "portfolio-chat"
 main = "src/index.ts"
 compatibility_date = "2026-01-06"
 
+# Enable observability
+[observability]
+enabled = true
+
 [vars]
 # Replace this with your GitHub Pages URL or a custom domain.
 PROFILE_URL = "https://relcode.github.io/ai/profile.json"

@@ -114,7 +114,7 @@ async function selectKeysWithOpenAI(
 		"For specific questions, return just the most relevant key. " +
 		'If none fit, return "contact". ' +
 		"\n\nSemantic awareness rules:\n" +
-		"- Education: 'high school' = 'secondary school', 'college'/'university'/'tertiary' = 'tertiary_education'\n" +
+		"- Education: 'high school' = 'secondary school', 'college'/'university'/'tertiary'/'qualification'/'degree'/'diploma'/'BTech' = 'early_life' (which contains tertiary_education)\n" +
 		"- Skills: 'programming'/'coding'/'development' all relate to 'skills'\n" +
 		"- Work: 'job'/'employment'/'career'/'position'/'role' all relate to 'professional_background' or 'career_journey'\n" +
 		"- Background: 'childhood'/'upbringing'/'growing up' relate to 'early_life'\n" +
@@ -170,8 +170,9 @@ async function answerWithOpenAI(env: Env, question: string, context: string): Pr
 		"\n\nSemantic understanding:\n" +
 		"- 'High school' = 'secondary school' (South African terminology)\n" +
 		"- 'College'/'university'/'tertiary' refer to post-secondary education\n" +
+		"- 'Qualification'/'degree'/'diploma'/'BTech' questions should check 'tertiary_education' or 'formal_education' sections\n" +
 		"- 'Coding'/'programming'/'development' are interchangeable\n" +
-		"- When asked about education/school, check both 'primary_school', 'secondary_school', and 'tertiary_education' sections\n" +
+		"- When asked about education/school/qualifications, check 'primary_school', 'secondary_school', 'tertiary_education', and 'formal_education' sections\n" +
 		"- Be conversational and natural in your responses\n" +
 		"- If the information exists in context but uses different terminology, translate appropriately\n\n" +
 		"If the answer is truly not in the context, respond warmly: 'That's a great question! The knowledge base doesn't cover that detail, but you could reach out to Lebo directly to learn more.'";
@@ -195,6 +196,8 @@ async function answerWithOpenAI(env: Env, question: string, context: string): Pr
 			],
 		}),
 	});
+
+	console.log("[OPENAI_ANSWER] Request to OpenAI, status:", res.status);
 
 	if (!res.ok) {
 		const text = await res.text();
@@ -236,6 +239,9 @@ const worker = {
 		try {
 			const body = (await request.json()) as ChatRequest;
 			const question = (body.question || "").trim();
+			
+			console.log("[REQUEST] Question:", question);
+			
 			if (!question) {
 				const headers = new Headers({ "Content-Type": "application/json" });
 				withCors(headers, origin);
@@ -253,6 +259,7 @@ const worker = {
 
 			// Classify the message type
 			const classification = await classifyMessage(env, question);
+			console.log("[CLASSIFICATION]", classification);
 
 			// Handle greetings
 			if (classification.type === "greeting") {
@@ -288,6 +295,7 @@ const worker = {
 			if (keys.length === 0) throw new Error("Profile JSON has no available attributes");
 
 			const selectedKeys = await selectKeysWithOpenAI(env, question, keys, profile._metadata);
+			console.log("[KEY_SELECTION] Selected keys:", selectedKeys);
 
 			// Build context from selected keys
 			const contextParts: string[] = [];
@@ -304,6 +312,8 @@ const worker = {
 				contextParts.join("\n");
 
 			const answer = await answerWithOpenAI(env, question, context);
+
+			console.log("[RESPONSE] Sending answer, length:", answer.length);
 
 			const headers = new Headers({ "Content-Type": "application/json" });
 			withCors(headers, origin);

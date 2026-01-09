@@ -78,11 +78,21 @@
 				"significance": "This period shows resourcefulness and determination - learning to code with minimal resources and a laptop that had passed through multiple owners"
 			},
 			"formal_education": {
-				"institution": "University of Johannesburg (UJ)",
-				"qualification": "IT Diploma",
-				"applied": "2015",
-				"years": "2016-2019 (3 years)",
-				"approach": "Applied for the IT diploma while continuing to self-learn and improve his skills, combining formal education with his ongoing personal development"
+				"diploma": {
+					"institution": "University of Johannesburg (UJ)",
+					"qualification": "Diploma in Business Information Technology",
+					"applied": "2015",
+					"years": "2016-2019 (3 years)",
+					"completed": "2019",
+					"approach": "Applied for the IT diploma while continuing to self-learn and improve his skills, combining formal education with his ongoing personal development"
+				},
+				"btech": {
+					"institution": "University of Johannesburg (UJ)",
+					"qualification": "BTech in Information Technology",
+					"enrolled": "2025",
+					"completed": "2025",
+					"achievement": "Successfully completed BTech in the same year of enrollment"
+				}
 			}
 		}
 	},
