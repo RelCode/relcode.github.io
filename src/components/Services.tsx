@@ -11,7 +11,7 @@ const Services: React.FC = () => {
 	];
 
 	return (
-		<section className="services-section">
+		<section className="services-section" id="services">
 			<div className="services-header">
 				<h3 className="section-title">What I Can Help With</h3>
 			</div>

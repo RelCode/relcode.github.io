@@ -36,7 +36,7 @@ const ResumeHeader: React.FC = () => {
 	}, [text, isDeleting, loopNum, typingSpeed]);
 
 	return (
-		<header className="resume-header">
+		<header className="resume-header" id="top">
 			<div className="header-content">
 				<div className="profile-picture">
 					<img src="profilepicture.jpeg" alt="Profile" />

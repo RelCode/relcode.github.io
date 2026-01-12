@@ -34,7 +34,7 @@ const Education: React.FC = () => {
   ];
 
   return (
-    <section className="education-section">
+    <section className="education-section" id="education">
       <h3 className="section-title">Education</h3>
       {education.map((edu, index) => (
         <div key={index} className="education-item">

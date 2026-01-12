@@ -49,7 +49,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section className="projects-section">
+    <section className="projects-section" id="projects">
       <h3 className="section-title">Featured Work</h3>
       {projects.map((project, index) => (
         <div key={index} className="project-item">
