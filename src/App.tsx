@@ -17,6 +17,13 @@ function App() {
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target) {
+        const tag = target.tagName;
+        const isTypingContext = tag === 'INPUT' || tag === 'TEXTAREA' || target.isContentEditable;
+        if (isTypingContext) return;
+      }
+
       const isCmdOrCtrl = e.metaKey || e.ctrlKey;
       if (!isCmdOrCtrl) return;
       if (e.altKey || e.shiftKey) return;
@@ -33,7 +40,8 @@ function App() {
     const scrollTo = (id: string) => {
       const el = document.getElementById(id);
       if (!el) return;
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+      el.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
     };
 
     const openExternal = (url: string) => {
@@ -133,7 +141,11 @@ function App() {
 
   return (
     <div className="app-container">
-      <div className="resume-paper">
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+
+      <main className="resume-paper" id="main-content">
         <ResumeHeader />
         <Summary />
         <div className="divider"></div>
@@ -146,7 +158,7 @@ function App() {
         <Experience />
         <div className="divider"></div>
         <Education />
-      </div>
+      </main>
 
       <FooterChatbot isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
 

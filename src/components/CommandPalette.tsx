@@ -21,6 +21,9 @@ const CommandPalette: React.FC<Props> = ({ isOpen, onClose, actions }) => {
 	const [query, setQuery] = useState("");
 	const [activeIndex, setActiveIndex] = useState(0);
 
+	const dialogRef = useRef<HTMLDivElement | null>(null);
+	const previouslyFocusedRef = useRef<HTMLElement | null>(null);
+
 	const inputRef = useRef<HTMLInputElement | null>(null);
 	const listRef = useRef<HTMLDivElement | null>(null);
 
@@ -36,10 +39,16 @@ const CommandPalette: React.FC<Props> = ({ isOpen, onClose, actions }) => {
 
 	useEffect(() => {
 		if (!isOpen) return;
+		previouslyFocusedRef.current = document.activeElement as HTMLElement | null;
 		setQuery("");
 		setActiveIndex(0);
 		const raf = requestAnimationFrame(() => inputRef.current?.focus());
 		return () => cancelAnimationFrame(raf);
+	}, [isOpen]);
+
+	useEffect(() => {
+		if (isOpen) return;
+		previouslyFocusedRef.current?.focus?.();
 	}, [isOpen]);
 
 	useEffect(() => {
@@ -56,6 +65,36 @@ const CommandPalette: React.FC<Props> = ({ isOpen, onClose, actions }) => {
 		if (!isOpen) return;
 
 		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === "Tab") {
+				const dialog = dialogRef.current;
+				if (!dialog) return;
+				const active = document.activeElement;
+				if (!active || !dialog.contains(active)) return;
+
+				const focusable = Array.from(
+					dialog.querySelectorAll<HTMLElement>(
+						"button,[href],input,select,textarea,[tabindex]:not([tabindex='-1'])"
+					)
+				).filter((el) => !el.hasAttribute("disabled") && el.tabIndex !== -1);
+
+				if (focusable.length === 0) return;
+
+				const first = focusable[0];
+				const last = focusable[focusable.length - 1];
+				const isShift = e.shiftKey;
+
+				if (!isShift && active === last) {
+					e.preventDefault();
+					first.focus();
+					return;
+				}
+				if (isShift && active === first) {
+					e.preventDefault();
+					last.focus();
+					return;
+				}
+			}
+
 			if (e.key === "Escape") {
 				e.preventDefault();
 				onClose();
@@ -106,13 +145,17 @@ const CommandPalette: React.FC<Props> = ({ isOpen, onClose, actions }) => {
 	return (
 		<div className="command-palette-backdrop" role="presentation" onMouseDown={onClose}>
 			<div
+				ref={dialogRef}
 				className="command-palette"
 				role="dialog"
 				aria-modal="true"
-				aria-label="Command palette"
+				aria-labelledby="command-palette-title"
 				onMouseDown={(e) => e.stopPropagation()}
 			>
 				<div className="command-palette-header">
+					<div id="command-palette-title" className="sr-only">
+						Command palette
+					</div>
 					<input
 						ref={inputRef}
 						className="command-palette-input"
@@ -122,6 +165,7 @@ const CommandPalette: React.FC<Props> = ({ isOpen, onClose, actions }) => {
 							setActiveIndex(0);
 						}}
 						placeholder="Type a command…"
+						aria-label="Search commands"
 						autoComplete="off"
 						spellCheck={false}
 					/>

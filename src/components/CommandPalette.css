@@ -41,6 +41,11 @@
 	border-color: #1a1a1a;
 }
 
+.command-palette-input:focus-visible {
+	outline: 3px solid #1a1a1a;
+	outline-offset: 2px;
+}
+
 .command-palette-hint {
 	font-size: 0.85rem;
 	color: #444;
@@ -79,6 +84,11 @@
 	background: #f5f5f5;
 }
 
+.command-palette-item:focus-visible {
+	outline: 3px solid #1a1a1a;
+	outline-offset: 2px;
+}
+
 .command-palette-item-label {
 	font-weight: 700;
 	color: #1a1a1a;
@@ -92,4 +102,10 @@
 .command-palette-empty {
 	padding: 0.85rem 0.75rem;
 	color: #444;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.command-palette-backdrop {
+		scroll-behavior: auto;
+	}
 }

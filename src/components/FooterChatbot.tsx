@@ -34,6 +34,10 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 
+	const dialogRef = useRef<HTMLDivElement | null>(null);
+	const inputRef = useRef<HTMLInputElement | null>(null);
+	const previouslyFocusedRef = useRef<HTMLElement | null>(null);
+
 	const listRef = useRef<HTMLDivElement | null>(null);
 
 	const apiUrl = useMemo(() => {
@@ -82,6 +86,7 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 
 	useEffect(() => {
 		if (isOpen) {
+			previouslyFocusedRef.current = document.activeElement as HTMLElement | null;
 			setIsMounted(true);
 			const raf = requestAnimationFrame(() => setIsVisible(true));
 			return () => cancelAnimationFrame(raf);
@@ -93,8 +98,48 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 	}, [isOpen]);
 
 	useEffect(() => {
+		if (isOpen) return;
+		previouslyFocusedRef.current?.focus?.();
+	}, [isOpen]);
+
+	useEffect(() => {
+		if (!isOpen) return;
+		const raf = requestAnimationFrame(() => inputRef.current?.focus());
+		return () => cancelAnimationFrame(raf);
+	}, [isOpen]);
+
+	useEffect(() => {
 		if (!isOpen) return;
 		const onKeyDown = (e: KeyboardEvent) => {
+			if (e.key === "Tab") {
+				const dialog = dialogRef.current;
+				if (!dialog) return;
+				const active = document.activeElement;
+				if (!active || !dialog.contains(active)) return;
+
+				const focusable = Array.from(
+					dialog.querySelectorAll<HTMLElement>(
+						"button,[href],input,select,textarea,[tabindex]:not([tabindex='-1'])"
+					)
+				).filter((el) => !el.hasAttribute("disabled") && el.tabIndex !== -1);
+
+				if (focusable.length === 0) return;
+				const first = focusable[0];
+				const last = focusable[focusable.length - 1];
+				const isShift = e.shiftKey;
+
+				if (!isShift && active === last) {
+					e.preventDefault();
+					first.focus();
+					return;
+				}
+				if (isShift && active === first) {
+					e.preventDefault();
+					last.focus();
+					return;
+				}
+			}
+
 			if (e.key === "Escape") onClose();
 		};
 		window.addEventListener("keydown", onKeyDown);
@@ -180,19 +225,29 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 
 	return (
 		<div
+			ref={dialogRef}
 			className={isVisible ? "footer-chatbot is-open" : "footer-chatbot"}
 			role="dialog"
-			aria-label="AI portfolio chatbot"
+			aria-modal="true"
+			aria-labelledby="footer-chatbot-title"
 			aria-hidden={!isVisible}
 		>
 			<div className="footer-chatbot-header">
-				<div className="footer-chatbot-title">Chat with AI</div>
+				<div className="footer-chatbot-title" id="footer-chatbot-title">
+					Chat with AI
+				</div>
 				<button className="footer-chatbot-close" type="button" onClick={onClose} aria-label="Close chat">
 					<X size={18} />
 				</button>
 			</div>
 
-			<div className="footer-chatbot-body" ref={listRef}>
+			<div
+				className="footer-chatbot-body"
+				ref={listRef}
+				aria-live="polite"
+				aria-relevant="additions"
+				aria-busy={isLoading}
+			>
 				{messages.map((m, idx) => (
 					<div key={idx} className={m.role === "user" ? "msg user" : "msg assistant"}>
 						{m.content}
@@ -204,10 +259,12 @@ const FooterChatbot: React.FC<Props> = ({ isOpen, onClose }) => {
 
 			<form className="footer-chatbot-input" onSubmit={onSubmit}>
 				<input
+					ref={inputRef}
 					className="footer-chatbot-text"
 					value={question}
 					onChange={(e) => setQuestion(e.target.value)}
 					placeholder={hasQuestionsLeft ? `Ask a question… (${questionsLeft} left)` : "No questions left"}
+					aria-label="Message"
 					disabled={!hasQuestionsLeft}
 				/>
 				<button className="footer-chatbot-send" type="submit" disabled={!canSend}>
